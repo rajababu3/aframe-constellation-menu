@@ -18,7 +18,12 @@ export default class UserList extends Component {
     componentDidMount() {
       this.UserList();
     }
-  
+    
+    handleClick(){
+        console.log("Hey you clicked a cube: ");
+        
+    }
+
     UserList() {
         fetch(url)
         .then((resp) => resp.json())
@@ -29,8 +34,12 @@ export default class UserList extends Component {
   
     render() {
       const persons = this.state.person.map((item, i) => {
-          console.log(item);
-        return <Entity key={item.email} mixin="cube"></Entity>
+        //   console.log(item);
+        return <Entity events={{
+                            click: this.handleClick}} 
+                            key={item.email} 
+                            mixin="cube">
+                            </Entity>
       });
   
       return (
@@ -38,19 +47,10 @@ export default class UserList extends Component {
         geometry={{primitive: 'box'}}
         material={{color: 'red'}}
               event-set__1="_event: click; _target: #cubes; visible: true"
-              event-set_2 ="_event: click; _target: #cubes; visible: false"
               event-set__3="_event: mouseenter; material.color: #5A67A6"
               event-set__4="_event: mouseleave; material.color: #FCB241"
               position="-1 0 -2">
         <Entity id="cubes" visible="false" layout="type: line; margin: 5" position="0 1 -3">
-          {/* <Entity mixin="cube"></Entity>
-          <Entity mixin="cube"></Entity>
-          <Entity mixin="cube"></Entity>
-          <Entity mixin="cube"></Entity>
-          <Entity mixin="cube"></Entity>
-          <Entity mixin="cube"></Entity>
-          <Entity mixin="cube"></Entity>
-          <Entity mixin="cube"></Entity> */}
           {persons}
         </Entity>
         </Entity>

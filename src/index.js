@@ -21,14 +21,6 @@ class App extends React.Component {
     });
   }
 
-  handleClick = () => {
-    console.log('Clicked!');
-
-  }
-   
-  handleCollide = () => {
-    console.log('Collided!');
-  }
   render () {
     return (
       <Scene>
