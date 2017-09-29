@@ -31,7 +31,7 @@ class App extends React.Component {
                  material="color: #FFFBE0"></a-mixin>
         <a-mixin id="secondary" material="color: #FFB400"></a-mixin>
         </a-assets>
-
+        <a-entity id="look-cam" camera="userHeight: 1.6" look-controls wasd-controls></a-entity>
         <Entity primitive="a-plane" src="#groundTexture" rotation="-90 0 0" height="100" width="100"/>
         <Entity primitive="a-light" type="ambient" color="#445451"/>
         <Entity primitive="a-light" type="point" intensity="2" position="2 4 4"/>
@@ -40,7 +40,7 @@ class App extends React.Component {
         <Entity text={{value: 'Hello, A-Frame React!', align: 'center'}} position={{x: 0, y: 2, z: -1}}/>
 
 
-        <UserList />
+        <UserList  />
         <Entity primitive="a-camera">
           <Entity primitive="a-cursor" animation__click={{property: 'scale', startEvents: 'click', from: '0.1 0.1 0.1', to: '1 1 1', dur: 150}}/>
         </Entity>

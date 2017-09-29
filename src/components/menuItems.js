@@ -35,7 +35,6 @@ export default class UserList extends Component {
         fetch(url1)
         .then((resp) => resp.json())
         .then((data) => {
-            console.log(data.results);
              this.setState({ menuCat1: data.results });
         });
 
@@ -61,19 +60,18 @@ export default class UserList extends Component {
 
       return (
         <Entity 
-        geometry={{primitive: 'box'}}
-        material={{color: 'red'}}
+              geometry={{primitive: 'box'}}
+              material={{color: 'red'}}
               event-set__1="_event: click; _target: #cubes; visible: true"
               event-set__3="_event: mouseenter; material.color: #5A67A6"
               event-set__4="_event: mouseleave; material.color: #FCB241"
               position="0 1 -2"
-        scale={{x: 0.1, y: 0.1, z: 0.1}}      
-              >
-        <Entity id="cubes" visible="false" layout="type: circle; radius: 3;" position="0 1 -9" look-at="[a-camera]" >
+              scale={{x: 0.1, y: 0.1, z: 0.1}}>
+        <Entity id="cubes" visible="false" layout="type: circle; radius: 3;" position="0 1 -9" look-at="#look-cam" >
           {persons}
         </Entity>
 
-        <Entity id="cubes1" visible="false" layout="type: circle; radius: 3;" position="0 3 -5" look-at="[a-camera]" >
+        <Entity id="cubes1" visible="false" layout="type: circle; radius: 3;" position="1 3 -1" look-at="#look-cam" >
           {mCat1}
         </Entity>
         </Entity>
