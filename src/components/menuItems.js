@@ -7,8 +7,8 @@ import React, { Component } from 'react';
 
 
 
-const url = 'https://randomuser.me/api/?results=5';
-const url1 = 'https://randomuser.me/api/?results=9';
+const url = 'https://randomuser.me/api/?results=6';
+const url1 = 'https://randomuser.me/api/?results=12';
 
 
 export default class UserList extends Component {
@@ -74,13 +74,14 @@ export default class UserList extends Component {
         <Entity 
             id="cubes" 
             visible="false" 
-            layout="type: circle; radius: 3;" 
-            position="0 1 -9" 
+            layout="type: circle; radius: 2;" 
+            position="-0.15 0.39 3.37" 
+            rotation="0 0 90"
             look-at="#look-cam" >
                       {persons}
         </Entity>
 
-        <Entity id="cubes1" visible="false" layout="type: circle; radius: 3;" position="1 3 -1" look-at="#look-cam" >
+        <Entity id="cubes1" visible="false" layout="type: circle; radius: 4;" position="-0.15 0.39 3.37" look-at="#look-cam" >
           {mCat1}
         </Entity>
         </Entity>

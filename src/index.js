@@ -23,13 +23,12 @@ class App extends React.Component {
 
   render () {
     return (
-      <Scene>
+      <Scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
         <a-assets>
           <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg"/>
           <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg"/>
-          <a-mixin id="cube" geometry="primitive: box"
-                 material="color: #FFFBE0"></a-mixin>
-        <a-mixin id="secondary" material="color: #FFB400"></a-mixin>
+          <a-mixin id="cube" geometry="primitive: box;" material="color: #FFFBE0"> </a-mixin>
+          <a-mixin id="secondary" material="color: #FFB400"></a-mixin>
         </a-assets>
         <a-entity id="look-cam" camera="userHeight: 1.6" look-controls wasd-controls></a-entity>
         <Entity primitive="a-plane" src="#groundTexture" rotation="-90 0 0" height="100" width="100"/>
