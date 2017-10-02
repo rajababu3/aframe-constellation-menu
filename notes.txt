@@ -1,0 +1,8 @@
+event-set__1="_event: click; _target: #cubes1; visible: true"
+event-set__3="_event: mouseenter; material.color: #5A67A6"
+event-set__4="_event: mouseleave; material.color: #FCB241"
+
+
+events={{
+        click: this.handleClick,
+        collided: [this.handleCollide]}}
