@@ -10,9 +10,7 @@ import React from 'react';
 //
 const MenuListItem = ({person, onItemSelect}) => {
 	return(
-
-        <Entity events={{click: () => onItemSelect(person) }} mixin="cube">
-             <Entity text={{value: 'Hello, A-Frame From Menu Item Clicked!', align: 'center'}} position={{x: 0, y: 2, z: -1}}/>
+        <Entity events={{click: () => console.log(onItemSelect(person)) }} mixin="cube" >    
          </Entity>
 
 	);
